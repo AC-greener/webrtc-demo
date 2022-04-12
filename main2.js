@@ -100,6 +100,8 @@ function call(){
 		pc1.addIceCandidate(e.candidate);	
 	}
 
+  // 监听pc2 的track 事件，该事件会在MediaStreamTrack被创建时触发。
+
 	pc2.ontrack = getRemoteStream;
 
   // 将一个新的媒体轨道添加到轨道集，这些轨道将被传输给另一个对等点。
@@ -122,6 +124,7 @@ function call(){
 }
 
 function hangup(){
+  //结束会话
 	pc1.close();
 	pc2.close();
 	pc1 = null;
